@@ -44,16 +44,16 @@ if(stat=="SOLD"){
   lcd.print("      SOLD");
   //Set red
   lcd.setRGB(255,0,0);
-}
-if(stat=="ON HOLD"){
+}else if(stat=="ON HOLD"){
   lcd.print("    ON HOLD");
   //Set yellow
   lcd.setRGB(255,175,0);  
-}
-if(stat=="FOR SALE"){
+}else if(stat=="FOR SALE"){
   lcd.print("    FOR SALE");
   //Set green
   lcd.setRGB(0,255,0);
+}else{
+  cd.print("VIN # NOT FOUND");
 }
 
 delay(1000);
