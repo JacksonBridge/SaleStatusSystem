@@ -9,14 +9,12 @@ rgb_lcd lcd;
 const int colorR = 255;
 const int colorG = 175;
 const int colorB = 0;
-boolean isSold = true;
-boolean isHold = false;
 String carData[2][6]={
-  {"69385456","674587","953456","876356","234654","234634"},
-  {"FOR SALE","SOLD","ON HOLD","FOR SALE","ON HOLD","FOR SALE"}
+  {"693854","674587","953456","123456","234654","234634"},
+  {"ON HOLD","FOR SALE","SOLD","SOLD","SOLD","SOLD"}
 };
 
-const String VIN_NUMBER = "953456";
+const String VIN_NUMBER = "674587";
 
 void setup()
 {
@@ -29,31 +27,31 @@ void setup()
     if(carData[0][i]==VIN_NUMBER){
       stat=carData[1][i];
     }
-    i++;
+ 
   }
 
-    //FILE *fp ;
-    //char data[50];
-    // opening an existing file
-    //printf( "Opening the file test.c in write mode" ) ;
-    //fp = fopen("CarData.txt","r");
-    //if ( fp == NULL )
-    //{
-    //    printf( "Could not open file test.c" ) ;
-    //}
+//    FILE *fp ;
+//    char data[50];
+//     //opening an existing file
+//    printf( "Opening the file test.c in write mode" ) ;
+//    fp = fopen("CarData.txt","r");
+//    if ( fp == NULL )
+//    {
+//        printf( "Could not open file test.c" ) ;
+//    }
   
 if(stat=="SOLD"){
-  lcd.print("SOLD");
+  lcd.print("      SOLD");
   //Set red
   lcd.setRGB(255,0,0);
 }
 if(stat=="ON HOLD"){
-  lcd.print("ON HOLD");
+  lcd.print("    ON HOLD");
   //Set yellow
   lcd.setRGB(255,175,0);  
 }
 if(stat=="FOR SALE"){
-  lcd.print("FOR SALE");
+  lcd.print("    FOR SALE");
   //Set green
   lcd.setRGB(0,255,0);
 }
@@ -65,7 +63,7 @@ void loop()
 {
 // set the cursor to column 0, line 1
 // (note: line 1 is the second row, since counting begins with 0):
-lcd.setCursor(0, 1);
+lcd.setCursor(5, 1);
 // print the number of seconds since reset:
 
 }
