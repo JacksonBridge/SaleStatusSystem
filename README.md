@@ -1,2 +1,2 @@
 # SaleStatusSystem
-Runs with a arduino lcd
+Runs with an arduino lcd
